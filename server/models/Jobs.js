@@ -10,7 +10,7 @@ const jobSchema = new mongoose.Schema ({
         required: true,
     },
     dateCreated: {
-        type: date,
+        type: Date,
         default: Date.now,
     },
     department: {

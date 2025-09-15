@@ -1,9 +1,9 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import cors from 'cors';
-import { PORT, mongoDBURL } from './config.js'
-import userRoutes from './routes/userRoutes.js'
-
+import { PORT, mongoDBURL } from './config.js';
+import userRoutes from './routes/userRoutes.js';
+import jobRoutes from './routes/jobRoutes.js';
 
 
 // Initialise express app
@@ -14,9 +14,11 @@ app.use(express.json());
 app.use(cors());
 
 
-// Routes
+// User middleware
 app.use("/api/users", userRoutes);
 
+// Jobs middleware
+app.use("/api/jobs", jobRoutes);
 
 
 mongoose
