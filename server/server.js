@@ -1,7 +1,10 @@
 import express from 'express';
 import mongoose from 'mongoose';
-import cors from "cors";
+import cors from 'cors';
 import { PORT, mongoDBURL } from './config.js'
+import userRoutes from './routes/userRoute.js'
+
+
 
 // Initialise express app
 const app = express();
@@ -9,6 +12,11 @@ const app = express();
 // Middleware for handling CORS POLICY
 app.use(express.json());
 app.use(cors());
+
+
+// Routes
+app.use("/api/users", userRoutes);
+
 
 
 mongoose
