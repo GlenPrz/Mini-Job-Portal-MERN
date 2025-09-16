@@ -13,7 +13,7 @@ const applicantSchema = ({
         trim: true,
         match: [/^\S+@\S+\.\S+$/, 'Please use a valid email address']
     },
-    contactNumber: {
+    contact: {
         type: String,
         required: true,
         trim: true,

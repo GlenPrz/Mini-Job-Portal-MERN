@@ -5,8 +5,8 @@ export const createApplicant = async (req, res) => {
     try{
         const  { name, email, contact, postApplying} = req.body;
 
-        if ( !name || !email || !contact || postApplying ) {
-            return res.status(400).json({ error: "All fields are required"})
+        if ( !name || !email || !contact || !postApplying ) {
+            return res.status(400).json({ error: "Alls fields are required"})
         }
 
         const newApplicant = new Applicant({  name, email, contact, postApplying });
@@ -32,7 +32,7 @@ export const getAllApplicants = async (req, res) => {
 export const getApplicant = async (req, res) => {
     try {
         const { id } = req.params;
-        const getApplicant = await Applicant.find( id )
+        const getApplicant = await Applicant.findById(id);
         res.json(getApplicant);
     } catch (err) {
         res.status(500).json({ error: err.message});
