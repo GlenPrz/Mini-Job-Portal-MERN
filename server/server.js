@@ -4,7 +4,7 @@ import cors from 'cors';
 import { PORT, mongoDBURL } from './config.js';
 import userRoutes from './routes/userRoutes.js';
 import jobRoutes from './routes/jobRoutes.js';
-
+import applicantRoutes from './routes/applicantRoutes.js'
 
 // Initialise express app
 const app = express();
@@ -20,6 +20,8 @@ app.use("/api/users", userRoutes);
 // Jobs middleware
 app.use("/api/jobs", jobRoutes);
 
+//  Applicant middleware
+app.use("/api/applicants", applicantRoutes);
 
 mongoose
     .connect(mongoDBURL)

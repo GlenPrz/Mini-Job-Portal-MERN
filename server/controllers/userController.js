@@ -3,9 +3,9 @@ import User from '../models/User.js'
 // Create new user
 export const createUser = async (req, res) => {
     try {
-        const { name, email, password, role } = req.body;
+        const { username, email, password, role } = req.body;
 
-        if (!name || !email || !password || !role) {
+        if (!username || !email || !password || !role) {
             return res.status(400).json({ error: "All fields are required"})
         }
 
@@ -14,7 +14,7 @@ export const createUser = async (req, res) => {
             return res.status(400).json({ error: "Email already exists"});
         }
 
-        const newUser = new User({ name, email, password, role});
+        const newUser = new User({ username, email, password, role});
         await newUser.save();
 
         res.status(201).json(newUser);

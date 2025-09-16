@@ -19,10 +19,11 @@ const applicantSchema = ({
         trim: true,
         match: [/^\+?[0-9\s\-()]{7,20}$/, 'Please enter a valid contact number']
     },
-    positionApplying: {
+    postApplying: {
         type: String,
         required: true,
     }
 })
 
-export const ApplicantModel = mongoose.model("Applicants", applicantSchema)
+const ApplicantModel = mongoose.model("Applicants", applicantSchema)
+export default ApplicantModel;
