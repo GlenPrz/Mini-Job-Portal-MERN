@@ -25,7 +25,7 @@ export const createJob = async (req, res) => {
 
 
 // Get all Jobs
-export const getJobs = async (req, res) => {
+export const getAllJobs = async (req, res) => {
     try {
         const jobs = await Job.find();
         res.json(jobs);
@@ -34,6 +34,20 @@ export const getJobs = async (req, res) => {
     }
 };
 
+
+// Get job by id
+export const getJob = async (req, res) => {
+    try {
+        const { id } = req.params;
+        const job = await Job.findById(id);
+        if (!job) {
+            return res.status(400).json({ error: "Job does not exist" });
+        }
+        res.json(job);
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
+};
 
 // Update Job
 export const updateJob = async (req, res) => {

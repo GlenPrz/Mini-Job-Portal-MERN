@@ -25,7 +25,7 @@ export const createUser = async (req, res) => {
 
 
 // Get all users
-export const getUsers = async (req, res) => {
+export const getAllUsers = async (req, res) => {
     try{
         const users = await User.find();
         res.json(users);
@@ -33,6 +33,22 @@ export const getUsers = async (req, res) => {
         res.status(500).json({ error: err.message});
     }
 };
+
+
+// Get user by id
+export const getUser = async (req, res) => {
+    try {
+        const { id } = req.params;
+        const user = await User.findById(id);
+        
+        if(!user) {
+            res.status(400).json({ message: "User id doesn't exist"})
+        }
+        res.json(user);
+    } catch (err) {
+        
+    }
+}
 
 
 // Update User
