@@ -6,7 +6,7 @@ export const createUser = async (req, res) => {
         const { username, email, password, role } = req.body;
 
         if (!username || !email || !password || !role) {
-            return res.status(400).json({ error: "All fields are required"})
+            return res.status(400).json({ error: "Alls fields are required"})
         }
 
         const existingUser = await User.findOne({ email });

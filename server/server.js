@@ -2,6 +2,8 @@ import express from 'express';
 import mongoose from 'mongoose';
 import cors from 'cors';
 import { PORT, mongoDBURL } from './config.js';
+import cookieParser from 'cookie-parser';
+import authRoute from './routes/AuthRoute.js';
 import userRoutes from './routes/userRoutes.js';
 import jobRoutes from './routes/jobRoutes.js';
 import applicantRoutes from './routes/applicantRoutes.js'
@@ -12,16 +14,6 @@ const app = express();
 // Middleware for handling CORS POLICY
 app.use(express.json());
 app.use(cors());
-
-
-// User middleware
-app.use("/api/users", userRoutes);
-
-// Jobs middleware
-app.use("/api/jobs", jobRoutes);
-
-//  Applicant middleware
-app.use("/api/applicants", applicantRoutes);
 
 mongoose
     .connect(mongoDBURL)
@@ -36,6 +28,19 @@ mongoose
         process.exit(1);
     });
 
+
+// User Route
+app.use("/api/users", userRoutes);
+
+// Jobs Route
+app.use("/api/jobs", jobRoutes);
+
+//  Applicant Route
+app.use("/api/applicants", applicantRoutes);
+
+app.use(cookieParser);
+
+app.use("/", authRoute);
 
 
 

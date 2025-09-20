@@ -7,7 +7,7 @@ const applicantSchema = ({
     },
     email: {
         type: String,
-        required: true,
+        required: [true, 'Your email address is required'],
         unique: true,
         lowercase: true,
         trim: true,
@@ -15,7 +15,7 @@ const applicantSchema = ({
     },
     contact: {
         type: String,
-        required: true,
+        required: [true, 'Your contact number is required'],
         trim: true,
         match: [/^\+?[0-9\s\-()]{7,20}$/, 'Please enter a valid contact number']
     },
