@@ -1,3 +1,38 @@
-@import "tailwindcss";
-@plugin "daisyui";
+.main-container {
+background: linear-gradient(235deg,
+  #f9e70a 0%,     /* Bright golden yellow */
+  #c2b23f 8%,     /* Warm olive */
+  #8a7f3a 25%,    /* Earthy bronze */
+  #4a4f3f 42%,    /* Deep mossy green */
+  #2f3540 60%,    /* Slate blue-gray */
+  #162a6d 85%,    /* Vivid indigo */
+  #0a122d 100%    /* Midnight navy */
+);}
 
+.form-card {
+    max-width: 50%;
+    height: 400px;
+    background-color: rgba(77, 80, 87, 0.158);
+    padding: 3em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 8px;
+    border: 1px solid rgba(19, 19, 19, 0.014);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.45);
+}
+
+.row {
+    margin-bottom: 1em;
+}
+.row input {
+    background-color: #262626;
+    height: 2em;
+    width: 100%;
+    border: 1px solid rgba(19, 19, 19, 0.014);
+    border-radius: 5px;
+    color: white;
+    padding: 5px 0 5px 1em;
+}
+ .row label{
+ }
