@@ -14,17 +14,19 @@ const Login = () => {
         
           <div className='form-card'>
             <form >
-                <div className='row'>
-                    <input type='text' className='username' id='username' autoComplete='off' /> 
-                    <label for='username' className='un_label'>Username</label>
+                <div className='row row-user'>
+                    <input type='text' className='username' id='username' placeholder='' autoComplete='off' required/> 
+                    <label htmlFor='username' className='un_label'>Username</label>
                 </div>
                 <div className='row'>
-                    <input type='password' className='pass' id='pass' autoComplete='off' /> 
-                    <label for='pass' className='pw_label'>password</label>
+                    <input type='password' className='pass' id='pass' placeholder='' autoComplete='off' required/> 
+                    <label htmlFor='pass' className='pw_label'>Password</label>
                 </div>
                 <div className='row'>
                     <p> Don't have an account yet?<a href='link'> Sign up here!</a></p>
                 </div>
+
+                <Button/>
             </form>
 
             
