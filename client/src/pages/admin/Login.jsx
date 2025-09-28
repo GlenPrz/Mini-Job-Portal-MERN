@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import '../styles/Login.css';
+import '../../styles/Login.css';
 import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
 import Paper from '@mui/material/Paper'
@@ -22,11 +22,11 @@ const Login = () => {
                     <input type='password' className='pass' id='pass' placeholder='' autoComplete='off' required/> 
                     <label htmlFor='pass' className='pw_label'>Password</label>
                 </div>
-                <div className='row'>
+                <div className='last'>
                     <p> Don't have an account yet?<a href='link'> Sign up here!</a></p>
                 </div>
 
-                <Button/>
+                <button className='login-btn'> Login </button>
             </form>
 
             
