@@ -23,7 +23,7 @@ import {
     Users01,
     UsersPlus,
 } from "@untitledui/icons";
-import { SidebarNavigationSlim } from "@/components/application/app-navigation/sidebar-navigation/sidebar-slim";
+// import { SidebarNavigationSlim } from "@/components/application/app-navigation/sidebar-navigation/sidebar-slim";
 
 const navItemsDualTier = [
     {

@@ -8,7 +8,8 @@ function App() {
   return (
     <div>
       <BrowserRouter>
-      <SidebarNavigationSlimDemo/>
+            {/* <SidebarNavigationSlimDemo/> */}
+
         <Routes>
           <Route path='/login' element={<Login />}></Route>
           {/* <Route path='/' element={< />}></Route>
