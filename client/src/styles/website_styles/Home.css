@@ -17,7 +17,7 @@
 .hero-section {
   background: linear-gradient(120deg, #0077b6 60%, #00b4d8 100%);
   color: #fff;
-  padding: 100px 20px 80px 20px;
+  padding: 100px 20px 80px;
   border-radius: 0 0 32px 32px;
   box-shadow: 0 8px 32px rgba(0, 119, 182, 0.12);
   position: relative;
@@ -37,32 +37,78 @@
   z-index: 0;
 }
 
-.hero-section h1 {
+.hero-title {
   font-size: 3.2rem;
   margin-bottom: 24px;
   font-weight: 700;
   letter-spacing: 1px;
-  z-index: 1;
   position: relative;
+  z-index: 1;
 }
 
-.hero-section p {
+.hero-subtitle {
   font-size: 1.25rem;
   max-width: 600px;
-  margin: 0 auto;
+  margin: 0 auto 32px;
   line-height: 1.7;
-  z-index: 1;
   position: relative;
+  z-index: 1;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 24px;
+}
+
+.btn {
+  padding: 12px 24px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn.primary {
+  background-color: #023e8a;
+  color: #fff;
+}
+
+.btn.primary:hover {
+  background-color: #0077b6;
+  transform: scale(1.05);
+}
+
+.btn.secondary {
+  background-color: #90e0ef;
+  color: #023e8a;
+}
+
+.btn.secondary:hover {
+  background-color: #48cae4;
+  transform: scale(1.05);
 }
 
 /* Cards Section */
 .cards-section {
+  background-color: #f8f9fa;
+  padding: 60px 20px 80px;
+}
+
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: #023e8a;
+}
+
+.cards-grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 36px;
-  background-color: #f8f9fa;
-  padding-bottom: 80px;
 }
 
 .card {
@@ -71,7 +117,7 @@
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.10);
   padding: 36px 28px;
   width: 320px;
-  transition: transform 0.25s cubic-bezier(.17,.67,.83,.67), box-shadow 0.25s;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
   position: relative;
   overflow: hidden;
 }
@@ -94,26 +140,26 @@
   box-shadow: 0 12px 32px rgba(0, 119, 182, 0.18);
 }
 
-.card h2 {
+.card h3 {
   font-size: 1.6rem;
   color: #0077b6;
   margin-bottom: 18px;
   font-weight: 600;
-  z-index: 1;
   position: relative;
+  z-index: 1;
 }
 
 .card p {
   font-size: 1.08rem;
   color: #444;
   line-height: 1.6;
-  z-index: 1;
   position: relative;
+  z-index: 1;
 }
 
 /* Responsive */
 @media (max-width: 1024px) {
-  .cards-section {
+  .cards-grid {
     gap: 24px;
   }
   .card {
@@ -123,11 +169,10 @@
 }
 
 @media (max-width: 768px) {
-  .cards-section {
+  .cards-grid {
     flex-direction: column;
     align-items: center;
     gap: 20px;
-    padding-bottom: 40px;
   }
 
   .card {
@@ -135,25 +180,32 @@
     padding: 22px 12px;
   }
 
-  .hero-section h1 {
+  .hero-title {
     font-size: 2.3rem;
   }
 
-  .hero-section p {
+  .hero-subtitle {
     font-size: 1.05rem;
   }
 }
 
 @media (max-width: 480px) {
   .hero-section {
-    padding: 60px 10px 40px 10px;
+    padding: 60px 10px 40px;
     border-radius: 0 0 16px 16px;
   }
-  .hero-section h1 {
+
+  .hero-title {
     font-size: 1.5rem;
   }
+
   .card {
     width: 98%;
     padding: 16px 6px;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
   }
 }
