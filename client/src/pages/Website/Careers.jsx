@@ -67,4 +67,4 @@ const CareersPage = () => {
   );
 };
 
-export default CareersPage;</div>
+export default CareersPage;
