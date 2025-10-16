@@ -1,22 +1,41 @@
-/* General Reset */
+/* ============================
+   Root Variables & Reset
+============================= */
+:root {
+  --primary-color: #0077b6;
+  --secondary-color: #00b4d8;
+  --accent-color: #023e8a;
+  --light-accent: #90e0ef;
+  --hover-accent: #48cae4;
+  --text-dark: #023e8a;
+  --text-light: #fff;
+  --text-muted: #444;
+  --bg-light: #f8f9fa;
+  --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: var(--font-main);
 }
 
-/* Container */
+/* ============================
+   Layout Containers
+============================= */
 .hero-section,
 .cards-section {
   padding: 64px 24px;
   text-align: center;
 }
 
-/* Hero Section */
+/* ============================
+   Hero Section
+============================= */
 .hero-section {
-  background: linear-gradient(120deg, #0077b6 60%, #00b4d8 100%);
-  color: #fff;
+  background: linear-gradient(120deg, var(--primary-color) 60%, var(--secondary-color) 100%);
+  color: var(--text-light);
   padding: 110px 24px 90px;
   border-radius: 0 0 40px 40px;
   box-shadow: 0 10px 36px rgba(0, 119, 182, 0.14);
@@ -38,7 +57,7 @@
 }
 
 .hero-title {
-  font-size: 3.5rem;
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
   margin-bottom: 28px;
   font-weight: 800;
   letter-spacing: 1.5px;
@@ -65,6 +84,9 @@
   margin-top: 28px;
 }
 
+/* ============================
+   Buttons
+============================= */
 .btn {
   padding: 14px 28px;
   font-size: 1.08rem;
@@ -76,40 +98,47 @@
   font-weight: 600;
 }
 
+.btn:focus-visible {
+  outline: 3px solid var(--hover-accent);
+  outline-offset: 2px;
+}
+
 .btn.primary {
-  background-color: #023e8a;
-  color: #fff;
+  background-color: var(--accent-color);
+  color: var(--text-light);
 }
 
 .btn.primary:hover,
 .btn.primary:focus {
-  background-color: #0077b6;
+  background-color: var(--primary-color);
   transform: scale(1.07);
   box-shadow: 0 4px 16px rgba(0, 119, 182, 0.18);
 }
 
 .btn.secondary {
-  background-color: #90e0ef;
-  color: #023e8a;
+  background-color: var(--light-accent);
+  color: var(--accent-color);
 }
 
 .btn.secondary:hover,
 .btn.secondary:focus {
-  background-color: #48cae4;
+  background-color: var(--hover-accent);
   transform: scale(1.07);
   box-shadow: 0 4px 16px rgba(0, 180, 216, 0.14);
 }
 
-/* Cards Section */
+/* ============================
+   Cards Section
+============================= */
 .cards-section {
-  background-color: #f8f9fa;
+  background-color: var(--bg-light);
   padding: 64px 24px 90px;
 }
 
 .section-title {
   font-size: 2.2rem;
   margin-bottom: 44px;
-  color: #023e8a;
+  color: var(--text-dark);
   font-weight: 700;
   letter-spacing: 1px;
 }
@@ -139,7 +168,7 @@
   right: -32px;
   width: 90px;
   height: 90px;
-  background: linear-gradient(135deg, #00b4d8 40%, #90e0ef 100%);
+  background: linear-gradient(135deg, var(--secondary-color) 40%, var(--light-accent) 100%);
   opacity: 0.16;
   border-radius: 50%;
   z-index: 0;
@@ -153,7 +182,7 @@
 
 .card h3 {
   font-size: 1.7rem;
-  color: #0077b6;
+  color: var(--primary-color);
   margin-bottom: 20px;
   font-weight: 700;
   position: relative;
@@ -162,14 +191,16 @@
 
 .card p {
   font-size: 1.12rem;
-  color: #444;
+  color: var(--text-muted);
   line-height: 1.7;
   position: relative;
   z-index: 1;
   opacity: 0.98;
 }
 
-/* Responsive */
+/* ============================
+   Responsive Design
+============================= */
 @media (max-width: 1024px) {
   .cards-grid {
     gap: 28px;
